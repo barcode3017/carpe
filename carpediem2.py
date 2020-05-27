@@ -1,12 +1,11 @@
 # -*- coding:utf-8 -*- 
 
 
-import discord, asyncio, time, random, re
+import discord, asyncio, time, random, re, os
 from discord.utils import get
 from discord.ext import commands
 from discord.ext.commands import has_permissions, MissingPermissions
 
-token = "NzE0NDA5NDkyMzc2MzIyMTE5.XsuQXg.Bupgoe0esetJnPzEc2oC-jCefj8"
 client = discord.Client()
 
 badwords = ["ㅄ", "ㅂㅅ", "불알", "부랄", "ㅅㅂ", "ㅅㄲ", "ㅆㅂ", "시발", "씨발", "병신","좆", "보지", "자지", "느금마", "걸레", "창년", "ㅈ같네", "자위", "걸레년", "보지년", "애미", "느금", "발기","씨1발", "시1발", "개1새끼", "자1지", "보1지", "뒤졌어", "새끼", "개간나", "간나", "개년", "개돼지", "개지랄", "느개비", "닥쳐", "똘추", "등신", "미친년", "보추", "썩을년", "썩을놈", "씹년", "씹창", "존나","후장", "한남"]
@@ -237,5 +236,5 @@ async def on_member_left(member):
     channel = client.get_channel(588343329532674048)
     await channel.send("{}\n님이 서버를 나가셨습니다.".format(member.mention))
 
-
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
