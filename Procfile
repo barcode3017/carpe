@@ -1,1 +1,1 @@
-worker: python carpediem2.py
+worker: python carpediembot.py
